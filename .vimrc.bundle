@@ -1,0 +1,76 @@
+"vunlde.vimで管理してるpluginを読み込む
+
+filetype off
+
+set rtp+=~/.vim/vundle/
+call vundle#rc()
+
+" Completion {{{
+  " 補完してくれる
+  Bundle 'Shougo/neocomplcache'
+
+  " neocomplcacheのsinpet補完
+  Bundle 'Shougo/neosnippet.git'
+
+  " htmlのタグ補完
+  Bundle 'mattn/zencoding-vim'
+" }}}
+
+
+" Programming {{{
+  " 編集中のファイルを簡単に実行できるプラグイン
+  Bundle 'thinca/vim-quickrun'
+
+  " ソースコード上のメソッド宣言、変数宣言の一覧を表示
+  Bundle 'taglist.vim'
+
+  " エラーがある場所をhilight
+  Bundle 'errormarker.vim'
+" }}}
+
+" Ui {{{
+  " 文字色をつける
+  Bundle 'desert256.vim'
+
+  " ステータスラインをカッコよくする
+  Bundle 'Lokaltog/vim-powerline'
+" }}}
+
+" Syntax {{{
+  " JavaScript
+  Bundle 'JavaScript-syntax'
+
+  " jQuery
+  Bundle 'jQuery'
+
+  " markdown
+  Bundle 'tpope/vim-markdown'
+
+  " coffee script
+  Bundle 'kchmck/vim-coffee-script'
+
+  " syntax checking plugins exist for eruby, haml, html, javascript, php, python, ruby and sass.
+  Bundle 'scrooloose/syntastic'
+" }}}
+
+" Search {{{
+  " 外部のgrep利用。:Grepで対話形式でgrep :Rgrepは再帰
+  Bundle 'grep.vim'
+
+  " NERDTree : ツリー型エクスプローラ
+  Bundle 'The-NERD-tree'
+
+  " tagsを利用したソースコード閲覧・移動補助機能 tagsファイルの自動生成
+  Bundle 'Source-Explorer-srcexpl.vim'
+
+  " NERD_tree, taglist, srcexpl の統合
+  Bundle 'trinity.vim'
+"
+" }}}
+
+" Encording {{{
+  Bundle 'banyan/recognize_charcode.vim'
+" }}}
+
+
+filetype plugin indent on
