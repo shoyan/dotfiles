@@ -31,6 +31,8 @@ call vundle#rc()
 " Ui {{{
   " 文字色をつける
   Bundle 'desert256.vim'
+  " https://github.com/chriskempson/vim-tomorrow-theme
+  Bundle 'chriskempson/vim-tomorrow-theme'
 
   " ステータスラインをカッコよくする
   Bundle 'Lokaltog/vim-powerline'

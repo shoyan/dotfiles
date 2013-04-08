@@ -38,3 +38,13 @@ set helpfile=$VIMRUNTIME/doc/help.txt
 
 " ファイルタイプ判定をon
 filetype plugin on
+
+
+nmap <Space>b :ls<CR>:buffer
+nmap <Space>f :edit .<CR>
+nmap <Space>v :vsplit<CR><C-w><C-w>:ls<CR>:buffer
+nmap <Space>V :Vexplore!<CR><CR>
+nmap <Space>p :set paste<CR>
+
+nmap <Space>h :set filetype=html<CR>
+nmap <Space>p :set filetype=php<CR>

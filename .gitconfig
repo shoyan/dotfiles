@@ -1,22 +1,22 @@
 [user]
-	name = Shohei Yamasaki
-	email = shyamasaki@gmail.com
+  name = Shohei Yamasaki
+  email = shyamasaki@gmail.com
 [color]
-	ui = true
+  ui = true
 [core]
-	autocrlf = input
-	editor = /usr/bin/vim
+  autocrlf = input
+  editor = /usr/bin/vim
 [merge]
-      tool = vimdiff
+  tool = vimdiff
 [alias]
-    st = status
-    co = checkout
-    cp = cherry-pick
+  st = status
+  co = checkout
+  cp = cherry-pick
 
     # branch関連
-    br = branch
-    ba = branch -a  # 全てのbranchを表示
+  br = branch
+  ba = branch -a  # 全てのbranchを表示
 
     # 履歴関連
-    ll = log --pretty=\"format:%ad %h (%an): %s\" --date=short
-    ls = log --name-status
+  ll = log --pretty=\"format:%ad %h (%an): %s\" --date=short
+  ls = log --name-status
