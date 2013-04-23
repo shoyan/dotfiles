@@ -36,11 +36,17 @@ call vundle#rc()
 
   " ステータスラインをカッコよくする
   Bundle 'Lokaltog/vim-powerline'
+
+  " gitの目印をつける
+  Bundle 'airblade/vim-gitgutter'
 " }}}
 
 " Syntax {{{
   " JavaScript
   Bundle 'JavaScript-syntax'
+
+  " jsのインデント
+  Bundle 'pangloss/vim-javascript'
 
   " jQuery
   Bundle 'jQuery'

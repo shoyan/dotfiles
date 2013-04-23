@@ -23,6 +23,12 @@ alias h="history"
 alias grep="grep --exclude='tags' --exclude='*.svn-*'  --exclude='entries'"
 alias be="bundle exec"
 
+alias g="git"
+alias ga="git add"
+alias gs="git status"
+alias gb="git branch"
+alias cb="echo $(git branch | grep -e '^*' | sed "s/^*//g")"
+
 #重複履歴を無視, 空白から始めたコマンドを無視 
 export HISTCONTROL=ignoreboth
 
