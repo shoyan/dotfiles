@@ -9,6 +9,16 @@ function authme {
   ssh $1 'cat >>.ssh/authorized_keys' < ~/.ssh/id_rsa.pub
 }
 
+# Gitのカレントブランチを取得
+function cb {
+    echo "$(git branch | grep -e '^*' | sed "s/^*//g")"
+}
+
+# カレントブランチをリモートにpush
+function push {
+    name=$(cb);git push origin $name
+}
+
 # User specific aliases and functions
 alias ls='ls -F -G'
 alias la="ls -a"
@@ -27,7 +37,6 @@ alias g="git"
 alias ga="git add"
 alias gs="git status"
 alias gb="git branch"
-alias cb="echo $(git branch | grep -e '^*' | sed "s/^*//g")"
 
 #重複履歴を無視, 空白から始めたコマンドを無視 
 export HISTCONTROL=ignoreboth
@@ -36,3 +45,10 @@ export HISTCONTROL=ignoreboth
 export HISTIGNORE="fg*:bg*:history*:h:ls*:up"
 
 export HISTSIZE=10000
+
+#--------------------------------
+# read local settings
+#--------------------------------
+if [ -e ~/.bashrc.local ]; then
+   source ~/.bashrc.local
+fi
