@@ -16,7 +16,7 @@ function cb {
 
 # カレントブランチをリモートにpush
 function push {
-    name=$(cb);git push origin $name
+    CURRENT_BRANCH=$(cb);git push origin $CURRENT_BRANCH; unset CURRENT_BRANCH
 }
 
 # User specific aliases and functions
