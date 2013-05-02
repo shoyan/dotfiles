@@ -16,8 +16,8 @@
   # branch関連
   b = branch
   ba = branch -a           # 全てのbranchを表示
-  bd = branch -d
-  bD = branch -D
+  delete = branch -d
+  Delete = branch -D
 
   p  = push
   po = push origin
