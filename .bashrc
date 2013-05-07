@@ -19,6 +19,12 @@ function push {
     CURRENT_BRANCH=$(cb);git push origin $CURRENT_BRANCH; unset CURRENT_BRANCH
 }
 
+function seika {
+    REPO="$(git remote -v | grep 'fetch' | sed 's/origin.*://g' | sed 's/.git (fetch)//g')"; git log --pretty="%s \n https://github.com/$REPO/commit/%H" --author="Shohei Yamasaki" --since=1.days | sed 's/\\n/\
+/g'; unset REPO
+
+}
+
 # User specific aliases and functions
 alias ls='ls -F -G'
 alias la="ls -a"
