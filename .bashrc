@@ -43,6 +43,7 @@ alias g="git"
 alias ga="git add"
 alias gs="git status"
 alias gb="git branch"
+alias pull="git pull"
 
 #重複履歴を無視, 空白から始めたコマンドを無視 
 export HISTCONTROL=ignoreboth
