@@ -20,9 +20,8 @@ function push {
 }
 
 function seika {
-    REPO="$(git remote -v | grep 'fetch' | sed 's/origin.*://g' | sed 's/.git (fetch)//g')"; git log --pretty="%s \n https://github.com/$REPO/commit/%H" --author="Shohei Yamasaki" --since=1.days | sed 's/\\n/\
-/g'; unset REPO
-
+    URL="$(git remote -v | head -n 1 | sed -e 's|.*git@\(.*\):\(.*\)\.git.*|https://\1/\2|g')"; git log --pretty="%s \n $URL/commit/%H" --author="Shohei Yamasaki" --since=1.days | sed 's/\\n/\
+/g'; unset URL
 }
 
 # User specific aliases and functions
