@@ -55,6 +55,6 @@ export HISTSIZE=10000
 #--------------------------------
 # read local settings
 #--------------------------------
-if [ -e ~/.bashrc.local ]; then
+if [ -f ~/.bashrc.local ]; then
    source ~/.bashrc.local
 fi
