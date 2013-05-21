@@ -1,14 +1,20 @@
 "-------------------------------------------------------------------------------
 " タグ関連 Tags
 "-------------------------------------------------------------------------------
-set tags=~/.tags
+
+"set tags=/Users/PMAC025S/.tags
+if has('path_extra')
+  "set tags+=tags;
+  set tags=**;
+endif
 
 set notagbsearch
 
 "tags-and-searchesを使い易くする
 nnoremap t  <Nop>
 "「飛ぶ」
-nnoremap tt  <C-]>
+"nnoremap tt  <C-]>
+nnoremap tt  g<C-]> 
 "「進む」
 nnoremap tj  ;<C-u>tag<CR>
 "「戻る」
