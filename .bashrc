@@ -11,7 +11,8 @@ function authme {
 
 # Gitのカレントブランチを取得
 function cb {
-    echo "$(git branch | grep -e '^*' | sed "s/^*//g")"
+    #echo "$(git branch | grep -e '^*' | sed "s/^*//g")"
+    echo "$(git rev-parse --abbrev-ref HEAD)"
 }
 
 # カレントブランチをリモートにpush
@@ -20,9 +21,15 @@ function push {
 }
 
 function seika {
-    URL="$(git remote -v | head -n 1 | sed -e 's|.*git@\(.*\):\(.*\)\.git.*|https://\1/\2|g')"; git log --pretty="%s \n $URL/commit/%H" --author="Shohei Yamasaki" --since=1.days | sed 's/\\n/\
+    URL="$(git remote -v | head -n 1 | sed -e 's|.*git@\(.*\):\(.*\)\.git.*|https://\1/\2|g')"; git log --pretty="%s \n $URL/commit/%H" --author="$(git config --get user.name)" --since=1.days | sed 's/\\n/\
 /g'; unset URL
 }
+
+function compare {
+    local CURRENT_BRANCH=$(cb);
+    open "$(git remote -v | head -n 1 | sed -e 's|.*git@\(.*\):\(.*\)\.git.*|https://\1/\2|g')/compare/master...$CURRENT_BRANCH"
+}
+
 
 # User specific aliases and functions
 alias ls='ls -F -G'
