@@ -14,7 +14,7 @@
   ca = commit -am
 
   # branch関連
-  b = branch
+  br = branch
   ba = branch -a           # 全てのbranchを表示
   delete = branch -d
   Delete = branch -D
