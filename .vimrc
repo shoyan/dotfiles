@@ -7,8 +7,6 @@ source ~/dotfiles/.vimrc.basic
 source ~/dotfiles/.vimrc.statusline
 "インデント設定
 source ~/dotfiles/.vimrc.indent
-"表示関連
-source ~/dotfiles/.vimrc.apperance
 "補完関連
 source ~/dotfiles/.vimrc.completion
 "Tags関連
