@@ -26,6 +26,9 @@
   # 履歴関連
   ll = log --pretty=\"format:%ad %h (%an): %s\" --date=short
   ls = log --name-status
+
+  delete-merged-branches = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
+
 [core]
   autocrlf = input
   quotepath = false
