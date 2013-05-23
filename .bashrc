@@ -21,8 +21,8 @@ function push {
 }
 
 function seika {
-    URL="$(git remote -v | head -n 1 | sed -e 's|.*git@\(.*\):\(.*\)\.git.*|https://\1/\2|g')"; git log --pretty="%s \n $URL/commit/%H" --author="$(git config --get user.name)" --since=1.days | sed 's/\\n/\
-/g'; unset URL
+    local URL="$(git remote -v | head -n 1 | sed -e 's|.*git@\(.*\):\(.*\)\.git.*|https://\1/\2|g')"; git log --pretty="%s \n $URL/commit/%H" --author="$(git config --get user.name)" --since=1.days | sed 's/\\n/\
+/g'
 }
 
 function compare {
@@ -30,6 +30,10 @@ function compare {
     open "$(git remote -v | head -n 1 | sed -e 's|.*git@\(.*\):\(.*\)\.git.*|https://\1/\2|g')/compare/master...$CURRENT_BRANCH"
 }
 
+
+function hateb {
+    curl -s --data '<?xml version="1.0"?><methodCall><methodName>bookmark.getTotalCount</methodName><params><param><value><string>http://shoyan.hatenablog.com/</string></value></param></params></methodCall>' http://b.hatena.ne.jp/xmlrpc | sed -e 's@.*<int>\(.*\)</int>.*@\1@'
+}
 
 # User specific aliases and functions
 alias ls='ls -F -G'
@@ -42,7 +46,7 @@ alias upp="cd ../../"
 alias rm="rm -i"
 alias mkdir="mkdir -p"
 alias h="history"
-alias grep="grep --exclude='tags' --exclude='*.svn-*'  --exclude='entries'"
+alias grep="grep -n --color --exclude='tags' --exclude='*.svn-*'  --exclude='entries' --exclude='.git'"
 alias be="bundle exec"
 
 alias g="git"
