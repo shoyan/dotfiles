@@ -46,7 +46,7 @@ alias upp="cd ../../"
 alias rm="rm -i"
 alias mkdir="mkdir -p"
 alias h="history"
-alias grep="grep -n --color --exclude='tags' --exclude='*.svn-*'  --exclude='entries' --exclude='.git'"
+alias grep="grep --color --exclude='tags' --exclude='*.svn-*'  --exclude='entries' --exclude='.git'"
 alias be="bundle exec"
 
 alias g="git"
