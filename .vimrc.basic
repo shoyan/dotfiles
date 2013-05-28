@@ -89,8 +89,8 @@ set ttyfast
 "colorscheme Tomorrow-Night
 "colorscheme Tomorrow-Night-Eighties
 "colorscheme kellys
-"colorscheme oceanblack256
-colorscheme nightflight2
+colorscheme oceanblack256
+"colorscheme nightflight2
 
 " ハイライト on
 syntax enable
