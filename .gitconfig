@@ -4,7 +4,7 @@
 [color]
   ui = true
 [alias]
-  s  = status
+  st  = status
   co = checkout
   fork = checkout -b
   cp = cherry-pick
