@@ -14,5 +14,5 @@ cnoremap <C-n> <Down>
 cnoremap <Down>  <C-n>
 
 " 補完にneocomplcacheを使う
-source ~/dotfiles/.vimrc.completion.neocomplcache
+"source ~/dotfiles/.vimrc.completion.neocomplcache
 

@@ -10,7 +10,7 @@ call vundle#rc()
   Bundle 'Shougo/neocomplcache'
 
   " neocomplcacheのsinpet補完
-  Bundle 'Shougo/neosnippet.git'
+  "Bundle 'Shougo/neosnippet.git'
 
   " htmlのタグ補完
   Bundle 'mattn/zencoding-vim'
@@ -26,6 +26,12 @@ call vundle#rc()
 
   " エラーがある場所をhilight
   Bundle 'errormarker.vim'
+
+  " コメントアウト
+  Bundle 'tomtom/tcomment_vim'
+
+  " クリップボードにコピー
+  Bundle 'git://github.com/kana/vim-fakeclip.git'
 " }}}
 
 " Ui {{{
@@ -69,10 +75,10 @@ call vundle#rc()
   Bundle 'The-NERD-tree'
 
   " tagsを利用したソースコード閲覧・移動補助機能 tagsファイルの自動生成
-  Bundle 'Source-Explorer-srcexpl.vim'
+  "Bundle 'Source-Explorer-srcexpl.vim'
 
   " NERD_tree, taglist, srcexpl の統合
-  Bundle 'trinity.vim'
+  "Bundle 'trinity.vim'
 "
 " }}}
 
