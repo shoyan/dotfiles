@@ -32,6 +32,9 @@ call vundle#rc()
 
   " クリップボードにコピー
   Bundle 'git://github.com/kana/vim-fakeclip.git'
+  
+  " テキストを快適に文字で囲む
+  Bundle 'tpope/vim-surround'
 " }}}
 
 " Ui {{{
