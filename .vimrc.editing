@@ -40,7 +40,7 @@ nmap y0 y^
 nmap yk y^
 
 " カーソルから行頭まで削除
-nnoremap <silent> <C-d> d0
+noremap <silent> <C-d> d0
 
 " カーソルから行頭まで削除(インサートモード)
 inoremap <silent> <C-k> <Esc>lc^
@@ -62,8 +62,12 @@ inoremap <expr> ,dd strftime('%Y/%m/%d')
 inoremap <expr> ,dt strftime('%H:%M:%S')
 
 " DOCTYPEの補完
-inoremap ,html <!DOCTYPE html>
+inoremap ,html   <!DOCTYPE html>
 
-" タブとスペースを表示
+"h タブとスペースを表示
 set list
 set listchars=tab:>-,trail:-,nbsp:%,extends:>,precedes:<
+
+inoremap if if() {}
+inoremap each foreach() {}
+inoremap ,fu function ()<CR>{<CR>}
