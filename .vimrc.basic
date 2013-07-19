@@ -17,6 +17,7 @@ set showcmd                      " コマンドをステータス行に表示
 set showmode                     " 現在のモードを表示
 set viminfo='50,<1000,s100,\"50  " viminfoファイルの設定
 set modelines=0                  " モードラインは無効
+set autowrite                    " 自動保存する
 
 " OSのクリップボードを使用する
 "set clipboard+=unnamed
@@ -33,16 +34,17 @@ nnoremap <C-p>  <ESC>"*pa
 
 " カーソル行をハイライト
 set cursorline
-" カレントウィンドウにのみ罫線を引く
-augroup cch
-  autocmd! cch
-  autocmd WinLeave * set nocursorline
-  autocmd WinEnter,BufRead * set cursorline
-augroup END
 
-hi clear CursorLine
-hi CursorLine gui=underline
-highlight CursorLine ctermbg=black guibg=black
+" カレントウィンドウにのみ罫線を引く
+"augroup cch
+"  autocmd! cch
+"  autocmd WinLeave * set nocursorline
+"  autocmd WinEnter,BufRead * set cursorline
+"augroup END
+"
+"hi clear CursorLine
+"hi CursorLine gui=underline
+"highlight CursorLine ctermbg=black guibg=black
 
 
 " Ev/Rvでvimrcの編集と反映
@@ -125,11 +127,6 @@ nnoremap l <Right>
 nnoremap <Down> gj
 nnoremap <Up>   gk
 
-" 0, 9で行頭、行末へ
-nmap 1 0
-nmap 0 ^
-nmap 9 $
-
 " insert mode での移動
 inoremap  <C-e> <END>
 inoremap  <C-a> <HOME>
@@ -209,6 +206,10 @@ nnoremap <silent> <C-g><C-r> :<C-u>Rgrep<Space><C-r><C-w> *<Enter><CR>
 let Grep_Skip_Dirs = '.svn .git'
 let Grep_Skip_Files = '*.bak *~'
 
+nnoremap [q :cprevious<CR>   " 前へ
+nnoremap ]q :cnext<CR>       " 次へ
+nnoremap [Q :<C-u>cfirst<CR> " 最初へ
+nnoremap ]Q :<C-u>clast<CR>  " 最後へ
 
 "-------------------------------------------------------------------------------
 " ステータスライン StatusLine
@@ -252,3 +253,19 @@ func! String2Hex(str)
   endwhile
   return out
 endfunc
+
+command! -nargs=? -complete=dir -bang CD  call s:ChangeCurrentDir('<args>', '<bang>') 
+function! s:ChangeCurrentDir(directory, bang)
+    if a:directory == ''
+        lcd %:p:h
+    else
+        execute 'lcd' . a:directory
+    endif
+
+    if a:bang == ''
+        pwd
+    endif
+endfunction
+
+" Change current directory.
+nnoremap <silent> <Space>cd :<C-u>CD<CR>

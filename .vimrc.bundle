@@ -35,6 +35,12 @@ filetype plugin indent on
 
   " クリップボードにコピー
   Bundle 'git://github.com/kana/vim-fakeclip.git'
+  
+  " テキストを快適に文字で囲む
+  Bundle 'tpope/vim-surround'
+
+  " 便利に置換
+  Bundle 'thinca/vim-qfreplace'
 " }}}
 
 " Ui {{{
