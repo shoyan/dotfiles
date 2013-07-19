@@ -35,6 +35,9 @@ call vundle#rc()
   
   " テキストを快適に文字で囲む
   Bundle 'tpope/vim-surround'
+
+  " 便利に置換
+  Bundle 'thinca/vim-qfreplace'
 " }}}
 
 " Ui {{{
