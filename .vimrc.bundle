@@ -1,9 +1,12 @@
 "vunlde.vimで管理してるpluginを読み込む
 
+" vundle settings
+set nocompatible
 filetype off
-
-set rtp+=~/.vim/vundle/
+set rtp+=~/.vim/vundle.git
 call vundle#rc()
+
+filetype plugin indent on
 
 " Completion {{{
   " 補完してくれる
@@ -85,6 +88,3 @@ call vundle#rc()
 " Encording {{{
   Bundle 'banyan/recognize_charcode.vim'
 " }}}
-
-
-filetype plugin indent on
