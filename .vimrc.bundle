@@ -80,6 +80,9 @@ call vundle#rc()
   " NERDTree : ツリー型エクスプローラ
   Bundle 'The-NERD-tree'
 
+  " ファイルの検索
+  Bundle 'kien/ctrlp.vim'
+
   " tagsを利用したソースコード閲覧・移動補助機能 tagsファイルの自動生成
   "Bundle 'Source-Explorer-srcexpl.vim'
 

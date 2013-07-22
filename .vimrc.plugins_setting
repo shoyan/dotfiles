@@ -110,3 +110,8 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 "------------------------------------
 let g:neocomplcache_enable_at_startup = 1 " 起動時に有効化
 
+"------------------------------------
+" ctrlp
+"------------------------------------
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|svn)$'
+
