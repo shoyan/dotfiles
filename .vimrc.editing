@@ -67,7 +67,3 @@ inoremap ,html   <!DOCTYPE html>
 "h タブとスペースを表示
 set list
 set listchars=tab:>-,trail:-,nbsp:%,extends:>,precedes:<
-
-inoremap if if() {}
-inoremap each foreach() {}
-inoremap ,fu function ()<CR>{<CR>}
