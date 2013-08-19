@@ -45,8 +45,8 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+export PATH=$HOME/.rbenv/bin:$PATH
+eval "$(rbenv init - zsh)"
 
 ########################################
 # 環境変数
@@ -143,6 +143,9 @@ setopt extended_glob
 
 # ^R で履歴検索をするときに * でワイルドカードを使用出来るようにする
 bindkey '^R' history-incremental-pattern-search-backward
+
+bindkey "^p" history-beginning-search-backward-end
+bindkey "^n" history-beginning-search-forward-end
 
 ########################################
 # エイリアス
