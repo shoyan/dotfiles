@@ -12,9 +12,6 @@ filetype plugin indent on
   " 補完してくれる
   Bundle 'Shougo/neocomplcache'
 
-  " neocomplcacheのsinpet補完
-  "Bundle 'Shougo/neosnippet.git'
-
   " htmlのタグ補完
   Bundle 'mattn/zencoding-vim'
 " }}}
@@ -33,14 +30,9 @@ filetype plugin indent on
   " コメントアウト
   Bundle 'tomtom/tcomment_vim'
 
-  " クリップボードにコピー
-  Bundle 'git://github.com/kana/vim-fakeclip.git'
-  
   " テキストを快適に文字で囲む
   Bundle 'tpope/vim-surround'
 
-  " 便利に置換
-  Bundle 'thinca/vim-qfreplace'
 " }}}
 
 " Ui {{{
@@ -66,12 +58,6 @@ filetype plugin indent on
   " jQuery
   Bundle 'jQuery'
 
-  " markdown
-  Bundle 'tpope/vim-markdown'
-
-  " coffee script
-  Bundle 'kchmck/vim-coffee-script'
-
   " syntax checking plugins exist for eruby, haml, html, javascript, php, python, ruby and sass.
   Bundle 'scrooloose/syntastic'
 " }}}
@@ -86,14 +72,5 @@ filetype plugin indent on
   " ファイルの検索
   Bundle 'kien/ctrlp.vim'
 
-  " tagsを利用したソースコード閲覧・移動補助機能 tagsファイルの自動生成
-  "Bundle 'Source-Explorer-srcexpl.vim'
-
-  " NERD_tree, taglist, srcexpl の統合
-  "Bundle 'trinity.vim'
-"
 " }}}
 
-" Encording {{{
-  Bundle 'banyan/recognize_charcode.vim'
-" }}}
