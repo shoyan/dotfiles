@@ -46,6 +46,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH="${HOME}/.rbenv/bin:${HOME}/.rbenv/shims:${HOME}/bin:${PATH}"
+export PATH=$PATH:/usr/local/mysql/bin
 eval "$(rbenv init -)"
 
 ########################################
