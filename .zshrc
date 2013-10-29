@@ -181,6 +181,8 @@ alias pull="git pull"
 
 alias v="vim"
 
+alias ctags='/usr/local/Cellar/ctags/5.8/bin/ctags'
+
 # C で標準出力をクリップボードにコピーする
 # mollifier delta blog : http://mollifier.hatenablog.com/entry/20100317/p1
 if which pbcopy >/dev/null 2>&1 ; then
@@ -248,6 +250,7 @@ function jikoku {
 
 #重複履歴を無視, 空白から始めたコマンドを無視 
 export HISTCONTROL=ignoreboth
+
 
 #--------------------------------
 # read local settings
