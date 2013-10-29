@@ -1,10 +1,13 @@
 #!/bin/bash
 
-DOT_FILES=(.vim .vimrc .bashrc .gitconfig .zshrc .gemrc .tmux.conf .oh-my-zsh)
+DOT_FILES=(.vim .vimrc .bashrc .gitconfig .zshrc .gemrc .tmux.conf .oh-my-zsh .ctags)
 
 for file in ${DOT_FILES[@]}; do
-    ln -s $HOME/dotfiles/$file $HOME/$file
+    if [ ! -e  $HOME/$file ]; then
+        ln -s $HOME/dotfiles/$file $HOME/$file
+    fi
 done
 
-curl -Sso ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
-
+if [ ! -e ~/.vim/autoload/pathogen.vim ]; then
+    curl -Sso ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+fi
