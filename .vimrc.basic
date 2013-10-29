@@ -272,3 +272,8 @@ endfunction
 
 " Change current directory.
 nnoremap <silent> <Space>cd :<C-u>CD<CR>
+
+autocmd FileType php set tags=$HOME/.tags
+
+" tagsジャンプの時に複数ある時は一覧表示
+nnoremap <C-]> g<C-]> 
