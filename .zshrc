@@ -241,6 +241,11 @@ function hateb {
     curl -s --data '<?xml version="1.0"?><methodCall><methodName>bookmark.getTotalCount</methodName><params><param><value><string>http://shoyan.hatenablog.com/</string></value></param></params></methodCall>' http://b.hatena.ne.jp/xmlrpc | sed -e 's@.*<int>\(.*\)</int>.*@\1@'
 }
 
+# 時刻表
+function jikoku {
+    open http://subway.city.fukuoka.lg.jp/eki/stations/tenjin_t1.html
+}
+
 #重複履歴を無視, 空白から始めたコマンドを無視 
 export HISTCONTROL=ignoreboth
 
