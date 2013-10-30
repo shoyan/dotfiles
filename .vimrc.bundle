@@ -24,9 +24,6 @@ filetype plugin indent on
   " ソースコード上のメソッド宣言、変数宣言の一覧を表示
   Bundle 'taglist.vim'
 
-  " エラーがある場所をhilight
-  Bundle 'errormarker.vim'
-
   " コメントアウト
   Bundle 'tomtom/tcomment_vim'
 
@@ -74,3 +71,6 @@ filetype plugin indent on
 
 " }}}
 
+" Encording {{{
+    Bundle 'banyan/recognize_charcode.vim'
+" }}}

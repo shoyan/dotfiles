@@ -40,14 +40,6 @@ let g:SrcExpl_GoBackMapKey  = "<C-b>"   " 戻る機能のMAP
 " nmap <F8> :CMiniBufExplorer<CR>:SrcExplToggle<CR>:TMiniBufExplorer<CR>
 
 "------------------------------------
-" errormarker.vim
-"------------------------------------
-" disable default shortcut mapping and re-define to <Leader>ec
-let g:errormarker_disablemappings = 1
-nmap <silent> <unique> <Leader>ec :ErrorAtCursor<CR>
-
-
-"------------------------------------
 " quickrun.vim
 "------------------------------------
 let g:quickrun_config = {}
