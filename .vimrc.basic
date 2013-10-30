@@ -29,30 +29,8 @@ set mouse=a
 set guioptions+=a
 set ttymouse=xterm2
 
-"ヤンクした文字は、システムのクリップボードに入れる"
-set clipboard=unnamed
-" 挿入モードでCtrl+kを押すとクリップボードの内容を貼り付けられるようにする "
-" imap <C-p>  <ESC>"*pa
-nnoremap <C-p>  <ESC>"*pa
-
 " カーソル行をハイライト
 set cursorline
-
-" カレントウィンドウにのみ罫線を引く
-"augroup cch
-"  autocmd! cch
-"  autocmd WinLeave * set nocursorline
-"  autocmd WinEnter,BufRead * set cursorline
-"augroup END
-"
-"hi clear CursorLine
-"hi CursorLine gui=underline
-"highlight CursorLine ctermbg=black guibg=black
-
-
-" Ev/Rvでvimrcの編集と反映
-command! Ev edit $MYVIMRC
-command! Rv source $MYVIMRC
 
 set helpfile=$VIMRUNTIME/doc/help.txt
 
@@ -110,14 +88,6 @@ set encoding=utf-8    " デフォルトエンコーディング
 " ワイルドカードで表示するときに優先度を低くする拡張子
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
 
-" 指定文字コードで強制的にファイルを開く
-command! Cp932 edit ++enc=cp932
-command! Eucjp edit ++enc=euc-jp
-command! Iso2022jp edit ++enc=iso-2022-jp
-command! Utf8 edit ++enc=utf-8
-command! Jis Iso2022jp
-command! Sjis Cp932
-
 "-------------------------------------------------------------------------------
 " 移動設定 Move
 "-------------------------------------------------------------------------------
@@ -127,92 +97,32 @@ nnoremap h <Left>
 nnoremap j gj
 nnoremap k gk
 nnoremap l <Right>
-nnoremap <Down> gj
-nnoremap <Up>   gk
 
-" insert mode での移動
-inoremap  <C-e> <END>
-inoremap  <C-a> <HOME>
 " インサートモードでもhjklで移動（Ctrl押すけどね）
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-h> <Left>
 inoremap <C-l> <Right>
 
-" spaceで次のbufferへ。back-spaceで前のbufferへ
-nmap <Space><Space> ;MBEbn<CR>
-nmap <BS><BS> ;MBEbp<CR>
-
 " 前回終了したカーソル行に移動
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
 
-" 最後に編集された位置に移動
-nnoremap gb '[
-nnoremap gp ']
-
-" 対応する括弧に移動
-nnoremap ( %
-nnoremap ) %
-
-" 最後に変更されたテキストを選択する
-nnoremap gc  `[v`]
-vnoremap gc <C-u>normal gc<Enter>
-onoremap gc <C-u>normal gc<Enter>
-
-" カーソル位置の単語をyankする
-nnoremap vy vawy
-
 " 矩形選択で自由に移動する
 set virtualedit+=block
-
-" CTRL-hjklでウィンドウ移動
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-nnoremap <C-h> <C-w>h
 
 "-------------------------------------------------------------------------------
 " 検索設定 Search
 "-------------------------------------------------------------------------------
 set wrapscan   " 最後まで検索したら先頭へ戻る
 set ignorecase " 大文字小文字無視
-"set smartcase  " 検索文字列に大文字が含まれている場合は区別して検索する
 set incsearch  " インクリメンタルサーチ
 set hlsearch   " 検索文字をハイライト
 
 "Escの2回押しでハイライト消去
 nmap <ESC><ESC> ;nohlsearch<CR><ESC>
 
-"選択した文字列を検索
-vnoremap <silent> // y/<C-R>=escape(@", '\\/.*$^~[]')<CR><CR>
-"選択した文字列を置換
-vnoremap /r "xy;%s/<C-R>=escape(@x, '\\/.*$^~[]')<CR>//gc<Left><Left><Left>
-
-"s*置換後文字列/g<Cr>でカーソル下のキーワードを置換
-nnoremap <expr> s* ':%substitute/\<' . expand('<cword>') . '\>/'
-
-" Ctrl-iでヘルプ
-nnoremap <C-i>  :<C-u>help<Space>
-" カーソル下のキーワードをヘルプでひく
-nnoremap <C-i><C-i> :<C-u>help<Space><C-r><C-w><Enter>
-
-" :Gb <args> でGrepBufferする
-command! -nargs=1 Gb :GrepBuffer <args>
-" カーソル下の単語をGrepBufferする
-nnoremap <C-g><C-b> :<C-u>GrepBuffer<Space><C-r><C-w><Enter>
-
-" :Gr <args>でカレントディレクトリ以下を再帰的にgrepする
-command! -nargs=1 Gr :Rgrep <args> *<Enter><CR>
-" カーソル下の単語をgrepする
-nnoremap <silent> <C-g><C-r> :<C-u>Rgrep<Space><C-r><C-w> *<Enter><CR>
-
 let Grep_Skip_Dirs = '.svn .git'
 let Grep_Skip_Files = '*.bak *~'
-
-nnoremap [q :cprevious<CR>   " 前へ
-nnoremap ]q :cnext<CR>       " 次へ
-nnoremap [Q :<C-u>cfirst<CR> " 最初へ
-nnoremap ]Q :<C-u>clast<CR>  " 最後へ
 
 "-------------------------------------------------------------------------------
 " ステータスライン StatusLine
@@ -273,7 +183,9 @@ endfunction
 " Change current directory.
 nnoremap <silent> <Space>cd :<C-u>CD<CR>
 
-autocmd FileType php set tags=$HOME/.tags
+" 拡張子で読み込みタグ変更
+"autocmd BufNewFile, BufRead *.php set tags+=$HOME/php.tags
+"autocmd FileType php set tags=$HOME/.tags
 
 " tagsジャンプの時に複数ある時は一覧表示
 nnoremap <C-]> g<C-]> 
