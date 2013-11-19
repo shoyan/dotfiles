@@ -183,6 +183,8 @@ alias v="vim"
 
 alias ctags='/usr/local/Cellar/ctags/5.8/bin/ctags'
 
+alias diff="colordiff"
+
 # C で標準出力をクリップボードにコピーする
 # mollifier delta blog : http://mollifier.hatenablog.com/entry/20100317/p1
 if which pbcopy >/dev/null 2>&1 ; then
