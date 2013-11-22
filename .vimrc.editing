@@ -8,19 +8,11 @@ set iminsert=0 imsearch=0
 set noimcmdline
 inoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
 
-" yeでそのカーソル位置にある単語をレジスタに追加
-nmap ye ;let @"=expand("<cword>")<CR>
-" Visualモードでのpで選択範囲をレジスタの内容に置き換える
-vnoremap p <Esc>;let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>
-
 " ビジュアルモード時vで行末まで選択
 vnoremap v $h
 
 " Tabキーを空白に変換
 set expandtab
-
-" コンマの後に自動的にスペースを挿入
-inoremap , ,<Space>
 
 "  Insert mode中で単語単位/行単位の削除をアンドゥ可能にする
 inoremap <C-u>  <C-g>u<C-u>
