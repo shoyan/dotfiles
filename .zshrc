@@ -247,7 +247,7 @@ function hateb {
 
 # 時刻表
 function jikoku {
-    open http://subway.city.fukuoka.lg.jp/eki/stations/tenjin_t1.html
+    open http://subway.city.fukuoka.lg.jp/eki/stations/akasak_t1.html
 }
 
 #重複履歴を無視, 空白から始めたコマンドを無視 
