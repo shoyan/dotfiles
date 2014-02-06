@@ -237,7 +237,13 @@ function seika {
 
 function compare {
     local CURRENT_BRANCH=$(cb);
-    open "$(git remote -v | head -n 1 | sed -e 's|.*git@\(.*\):\(.*\)\.git.*|https://\1/\2|g')/compare/master...$CURRENT_BRANCH"
+    local REMOTE_URI="$(git remote -v)";
+
+    if [[ "$REMOTE_URI" =~ "ghe" ]]; then
+        open "$(git remote -v | head -n 1 | sed -e 's|.*http://\(.*\).git.*|http://\1/|g')compare/master...$CURRENT_BRANCH"
+    else
+        open "$(git remote -v | head -n 1 | sed -e 's|.*git@\(.*\):\(.*\)\.git.*|https://\1/\2|g')/compare/master...$CURRENT_BRANCH"
+    fi
 }
 
 
