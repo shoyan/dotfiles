@@ -21,28 +21,6 @@ inoremap <C-w>  <C-g>u<C-w>
 " :Ptでインデントモード切替
 command! Pt :set paste!
 
-" インサートモード中に<C-o>でyankした内容をputする
-inoremap <C-o> <ESC>:<C-U>YRPaste 'p'<CR>i
-
-" y9 ydで行末までヤンク
-nmap y9 y$
-nmap yd y$
-" y0 ykで行頭までヤンク
-nmap y0 y^
-nmap yk y^
-
-" カーソルから行頭まで削除
-noremap <silent> <C-d> d0
-
-" カーソルから行頭まで削除(インサートモード)
-inoremap <silent> <C-k> <Esc>lc^
-" カーソルから行末まで削除(インサートモード)
-inoremap <silent> <C-d> <Esc>lc$
-" カーソルから行頭までヤンク(インサートモード)
-inoremap <silent> <C-y>e <Esc>ly0<Insert>
-" カーソルから行末までヤンク(インサートモード)
-inoremap <silent> <C-y>0 <Esc>ly$<Insert>
-
 " 保存時に行末の空白を除去する
 " autocmd BufWritePre * :%s/\s\+$//ge
 " 保存時にtabをスペースに変換する
@@ -52,9 +30,6 @@ inoremap <silent> <C-y>0 <Esc>ly$<Insert>
 inoremap <expr> ,df strftime('%Y/%m/%d %H:%M:%S')
 inoremap <expr> ,dd strftime('%Y/%m/%d')
 inoremap <expr> ,dt strftime('%H:%M:%S')
-
-" DOCTYPEの補完
-inoremap ,html   <!DOCTYPE html>
 
 "h タブとスペースを表示
 set list

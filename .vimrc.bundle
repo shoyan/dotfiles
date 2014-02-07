@@ -14,10 +14,15 @@ filetype plugin indent on
 
   " htmlのタグ補完
   Bundle 'mattn/zencoding-vim'
+
+  " スニペットサポート
+  Bundle 'Shougo/neosnippet'
+  Bundle 'Shougo/neosnippet-snippets'
+
 " }}}
 
 
-" Programming {{{
+" Edit {{{
   " 編集中のファイルを簡単に実行できるプラグイン
   Bundle 'thinca/vim-quickrun'
 
@@ -74,6 +79,7 @@ filetype plugin indent on
 
 " }}}
 
-" Encording {{{
+" Others {{{
+    " エンコード判定
     Bundle 'banyan/recognize_charcode.vim'
 " }}}
