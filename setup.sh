@@ -11,3 +11,7 @@ done
 if [ ! -e ~/.vim/autoload/pathogen.vim ]; then
     curl -Sso ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
 fi
+
+if [ ! -e ~/.vim/snipmate-snippets/neosnippets ]; then
+    cd ~/.vim/snipmate-snippets && git clone https://github.com/Shougo/neosnippet-snippets.git
+fi
