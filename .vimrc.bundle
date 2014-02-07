@@ -30,6 +30,9 @@ filetype plugin indent on
   " テキストを快適に文字で囲む
   Bundle 'tpope/vim-surround'
 
+  " Railsを快適に開発できるようにする
+  Bundle 'tpope/vim-rails'
+
 " }}}
 
 " Ui {{{
