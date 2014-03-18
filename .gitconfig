@@ -36,3 +36,5 @@
 #pager = lv -c
 [push]
   default = simple
+[diff]
+	noprefix = true
