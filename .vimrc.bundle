@@ -38,6 +38,12 @@ filetype plugin indent on
   " Railsを快適に開発できるようにする
   Bundle 'tpope/vim-rails'
 
+  " slimの色をつける
+  Bundle 'slim-template/vim-slim'
+
+  " coffee scriptの色づけ
+  Bundle 'kchmck/vim-coffee-script'
+
 " }}}
 
 " Ui {{{
