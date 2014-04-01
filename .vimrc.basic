@@ -181,8 +181,8 @@ nnoremap <silent> <Space>cd :<C-u>CD<CR>
 nnoremap <C-]> g<C-]> 
 
 " バッファリストの一つ前のバッファを開く
-nnoremap <silent>bp :bprevious<CR>
+nnoremap <silent>fp :bprevious<CR>
 " バッファリストの次のバッファを開く
-nnoremap <silent>bn :bnext<CR>
+nnoremap <silent>fn :bnext<CR>
 " 直前のバッファを開く
-nnoremap <silent>bb :b#<CR>
+nnoremap <silent>fb :b#<CR>
