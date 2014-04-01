@@ -258,7 +258,7 @@ function jikoku {
 
 # ジブリのmusic
 function jiburi {
-    open https://www.youtube.com/watch?v=xDAqQgWiAvE
+    open "https://www.youtube.com/watch?v=xDAqQgWiAvE"
 }
 
 #重複履歴を無視, 空白から始めたコマンドを無視 
