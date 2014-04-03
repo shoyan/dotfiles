@@ -41,7 +41,7 @@ filetype plugin on
 
 
 nnoremap <Space>b :ls<CR>:buffer
-nnoremap <Space>f :edit .<CR>
+nnoremap <Space>f :NERDTree<CR>
 nnoremap <Space>v :vsplit<CR><C-w><C-w>:ls<CR>:buffer
 
 nnoremap <Space>h :set filetype=html<CR>
