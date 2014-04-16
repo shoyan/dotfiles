@@ -40,8 +40,9 @@ syntax on
 filetype plugin on
 
 
-nnoremap <Space>b :ls<CR>:buffer
+nnoremap <Space>l :ls<CR>:buffer
 nnoremap <Space>f :NERDTree<CR>
+nnoremap <Space>b :NERDTreeFromBookmark<Space>
 nnoremap <Space>v :vsplit<CR><C-w><C-w>:ls<CR>:buffer
 
 nnoremap <Space>h :set filetype=html<CR>
