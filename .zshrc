@@ -230,6 +230,10 @@ function push {
     CURRENT_BRANCH=$(cb);git push origin $CURRENT_BRANCH; unset CURRENT_BRANCH
 }
 
+function branch_clean {
+    g branch --merged | grep -v \* | grep -v master | xargs -I % git branch -d %
+}
+
 function seika {
     local URL="$(git remote -v | head -n 1 | sed -e 's|.*git@\(.*\):\(.*\)\.git.*|https://\1/\2|g')"; git log --pretty="%s \n $URL/commit/%H" --author="$(git config --get user.name)" --since=1.days | sed 's/\\n/\
 /g'
@@ -253,7 +257,7 @@ function hateb {
 
 # 時刻表
 function jikoku {
-    open http://subway.city.fukuoka.lg.jp/eki/stations/akasak_t1.html
+    open "http://subway.city.fukuoka.lg.jp/schedule/eki_diagram.php?p1=0&p2=%E5%A4%A9%E7%A5%9E&p3=0&p4=0"
 }
 
 # ジブリのmusic
