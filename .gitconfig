@@ -38,3 +38,5 @@
   default = simple
 [diff]
 	noprefix = true
+[credential]
+	helper = osxkeychain
