@@ -83,6 +83,8 @@ filetype plugin indent on
   " ファイルの検索
   Bundle 'kien/ctrlp.vim'
 
+  Bundle "Shougo/unite.vim"
+
 " }}}
 
 " Others {{{
