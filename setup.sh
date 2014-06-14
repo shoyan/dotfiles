@@ -8,6 +8,10 @@ for file in ${DOT_FILES[@]}; do
     fi
 done
 
+if [ ! -e =~/.git_template/]; then
+    mkdir -p ~/.git_template/hooks
+fi
+
 if [ ! -e ~/.vim/autoload/pathogen.vim ]; then
     curl -Sso ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
 fi
