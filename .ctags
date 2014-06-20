@@ -1,3 +1,4 @@
---append=yes
+# Basic options
 --recurse=yes
---php-kinds=cfd
+--tag-relative=yes
+--exclude=.git
