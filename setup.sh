@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOT_FILES=(.vim .vimrc .bashrc .gitconfig .zshrc .gemrc .tmux.conf .oh-my-zsh .git_template .ctags)
+DOT_FILES=(.vim .vimrc .bashrc .gitconfig .zshrc .gemrc .tmux.conf .oh-my-zsh .git_template .ctags .gitignore_global)
 
 for file in ${DOT_FILES[@]}; do
     if [ ! -e  $HOME/$file ]; then
