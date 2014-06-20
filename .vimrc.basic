@@ -161,6 +161,6 @@ nnoremap <silent>fn :bnext<CR>
 " 直前のバッファを開く
 nnoremap <silent>fb :b#<CR>
 
+" Windowサイズの変更
 nnoremap <C-j> <C-w>+
 nnoremap <C-k> <C-w>-
-
