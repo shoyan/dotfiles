@@ -36,7 +36,6 @@
 	excludesfile = /Users/shyamasaki/.gitignore_global
 #pager = lv -c
 [push]
-  default = simple
 	default = current
 [diff]
 	noprefix = true
