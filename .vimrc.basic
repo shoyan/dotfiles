@@ -164,3 +164,6 @@ nnoremap <silent>fb :b#<CR>
 " Windowサイズの変更
 nnoremap <C-j> <C-w>+
 nnoremap <C-k> <C-w>-
+
+" tagsを検索
+nnoremap <leader>. :CtrlPTag<cr>
