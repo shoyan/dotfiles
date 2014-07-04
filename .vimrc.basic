@@ -169,3 +169,6 @@ nnoremap <C-h> <C-w><
 
 " 構文チェック
 nnoremap <Space>s :SyntasticCheck<CR>
+
+" tagsを検索
+nnoremap <leader>. :CtrlPTag<cr>
