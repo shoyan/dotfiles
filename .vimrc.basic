@@ -164,3 +164,8 @@ nnoremap <silent>fb :b#<CR>
 " Windowサイズの変更
 nnoremap <C-j> <C-w>+
 nnoremap <C-k> <C-w>-
+nnoremap <C-l> <C-w>>
+nnoremap <C-h> <C-w><
+
+" 構文チェック
+nnoremap <Space>s :SyntasticCheck<CR>
