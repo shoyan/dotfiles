@@ -46,6 +46,9 @@ filetype plugin indent on
   " coffee scriptの色づけ
   Bundle 'kchmck/vim-coffee-script'
 
+  " Htmlの補完
+  Bundle 'mattn/emmet-vim'
+
 " }}}
 
 " Ui {{{
