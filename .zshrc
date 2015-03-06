@@ -40,7 +40,7 @@ ZSH_THEME="pygmalion"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git colorize colored-man history cp emoji-clock history-substring-search rails tmux)
+plugins=(git colorize colored-man history cp emoji-clock history-substring-search rails)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -257,7 +257,7 @@ function hateb {
 
 # 時刻表
 function jikoku {
-    open "http://subway.city.fukuoka.lg.jp/schedule/eki_diagram.php?p1=0&p2=%E5%A4%A9%E7%A5%9E&p3=0&p4=0"
+    open "http://subway.city.fukuoka.lg.jp/schedule/eki_diagram.php?p1=0&p2=%E8%B5%A4%E5%9D%82&p3=0&p4=0"
 }
 
 # ジブリのmusic
