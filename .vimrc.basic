@@ -70,17 +70,20 @@ set ttyfast
 "-------------------------------------------------------------------------------
 " カラー関連 Colors
 "-------------------------------------------------------------------------------
-
 "colorscheme desert
 "colorscheme Tomorrow-Night
 "colorscheme Tomorrow-Night-Eighties
 "colorscheme kellys
-colorscheme oceanblack256
+"colorscheme oceanblack256
 "colorscheme nightflight2
+
+set background=dark
+colorscheme solarized
+
+let g:solarized_termcolors=256
 
 " ハイライト on
 syntax enable
-
 "-------------------------------------------------------------------------------
 " エンコーディング関連 Encoding
 "-------------------------------------------------------------------------------

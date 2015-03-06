@@ -57,6 +57,8 @@ filetype plugin indent on
   " https://github.com/chriskempson/vim-tomorrow-theme
   Bundle 'chriskempson/vim-tomorrow-theme'
 
+  Bundle 'altercation/vim-colors-solarized'
+
   " ステータスラインをカッコよくする
   Bundle 'Lokaltog/vim-powerline'
 
