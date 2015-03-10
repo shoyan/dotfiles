@@ -225,6 +225,14 @@ function cb {
     echo "$(git rev-parse --abbrev-ref HEAD)"
 }
 
+# Git branch create.
+# ブランチを作成
+# bc branch_name
+function bc {
+    git fetch
+    git checkout -b $1 origin/$1
+}
+
 # カレントブランチをリモートにpush
 function push {
     CURRENT_BRANCH=$(cb);git push origin $CURRENT_BRANCH; unset CURRENT_BRANCH
@@ -263,6 +271,11 @@ function jikoku {
 # ジブリのmusic
 function jiburi {
     open "https://www.youtube.com/watch?v=xDAqQgWiAvE"
+}
+
+function todo {
+ echo 'TODO\nスケジュール\n9:00 - 13:00\n13:00 - 14:00\n14:00 - 18:00\nメモ\n' | pbcopy
+ echo "Success. It's copied to the clipboard."
 }
 
 #重複履歴を無視, 空白から始めたコマンドを無視 
