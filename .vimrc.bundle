@@ -12,9 +12,7 @@ filetype plugin indent on
   " 補完してくれる
   Bundle 'Shougo/neocomplcache'
 
-  " htmlのタグ補完
-  Bundle 'mattn/zencoding-vim'
-
+  " Htmlの補完
   Bundle "mattn/emmet-vim"
 
   " スニペットサポート
@@ -34,7 +32,7 @@ filetype plugin indent on
   " コメントアウト
   Bundle 'tomtom/tcomment_vim'
 
-  " テキストを快適に文字で囲む
+  " テキストを文字で囲む
   Bundle 'tpope/vim-surround'
 
   " Railsを快適に開発できるようにする
@@ -46,9 +44,12 @@ filetype plugin indent on
   " coffee scriptの色づけ
   Bundle 'kchmck/vim-coffee-script'
 
-  " Htmlの補完
-  Bundle 'mattn/emmet-vim'
+  Bundle 'xolox/vim-misc'
+  Bundle 'xolox/vim-easytags'
 
+  " Vim plugin that allows you to visually select increasingly larger regions
+  " of text using the same key combination."
+  Bundle 'terryma/vim-expand-region'
 " }}}
 
 " Ui {{{
