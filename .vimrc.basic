@@ -182,3 +182,14 @@ nnoremap <Space>s :SyntasticCheck<CR>
 
 " tagsを検索
 nnoremap <leader>. :CtrlPTag<cr>
+
+" 引用符, 括弧の設定
+inoremap { {}<Left>
+inoremap [ []<Left>
+inoremap ( ()<Left>
+inoremap " ""<Left>
+inoremap ' ''<Left>
+inoremap < <><Left>
+
+" insertモードから抜ける
+inoremap <silent> jj <ESC>
