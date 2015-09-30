@@ -10,7 +10,7 @@ filetype plugin indent on
 
 " Completion {{{
   " 補完してくれる
-  Bundle 'Shougo/neocomplcache'
+  Bundle 'Shougo/neocomplete'
 
   " Htmlの補完
   Bundle "mattn/emmet-vim"
