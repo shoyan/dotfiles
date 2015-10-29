@@ -193,3 +193,9 @@ inoremap < <><Left>
 
 " insertモードから抜ける
 inoremap <silent> jj <ESC>
+
+"insertモードでもキー移動
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>
