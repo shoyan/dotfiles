@@ -38,6 +38,6 @@
 [push]
 	default = current
 [diff]
-	noprefix = true
+	noprefix = false
 [credential]
 	helper = osxkeychain

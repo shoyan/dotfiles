@@ -20,7 +20,7 @@ set modelines=0                  " モードラインは無効
 set autowrite                    " 自動保存する
 autocmd CursorHold *  wall
 autocmd CursorHoldI *  wall
-set updatetime=500
+set updatetime=2000
 
 " OSのクリップボードを使用する
 set clipboard+=unnamed
@@ -34,6 +34,7 @@ set ttymouse=xterm2
 set cursorline
 
 set helpfile=$VIMRUNTIME/doc/help.txt
+set modifiable
 
 execute pathogen#infect()
 syntax on
@@ -184,12 +185,12 @@ nnoremap <Space>s :SyntasticCheck<CR>
 nnoremap <leader>. :CtrlPTag<cr>
 
 " 引用符, 括弧の設定
-inoremap { {}<Left>
-inoremap [ []<Left>
-inoremap ( ()<Left>
-inoremap " ""<Left>
-inoremap ' ''<Left>
-inoremap < <><Left>
+" inoremap { {}<Left>
+" inoremap [ []<Left>
+" inoremap ( ()<Left>
+" inoremap " ""<Left>
+" inoremap ' ''<Left>
+" inoremap < <><Left>
 
 " insertモードから抜ける
 inoremap <silent> jj <ESC>

@@ -15,19 +15,12 @@ filetype plugin indent on
   " Htmlの補完
   Bundle "mattn/emmet-vim"
 
-  " スニペットサポート
-  Bundle 'Shougo/neosnippet'
-  Bundle 'Shougo/neosnippet-snippets'
-
 " }}}
 
 
 " Edit {{{
   " 編集中のファイルを簡単に実行できるプラグイン
   Bundle 'thinca/vim-quickrun'
-
-  " ソースコード上のメソッド宣言、変数宣言の一覧を表示
-  Bundle 'taglist.vim'
 
   " コメントアウト
   Bundle 'tomtom/tcomment_vim'
@@ -45,11 +38,14 @@ filetype plugin indent on
   Bundle 'kchmck/vim-coffee-script'
 
   Bundle 'xolox/vim-misc'
-  Bundle 'xolox/vim-easytags'
 
   " Vim plugin that allows you to visually select increasingly larger regions
   " of text using the same key combination."
   Bundle 'terryma/vim-expand-region'
+
+  " インデントを整えてくれるプラグイン
+  Bundle 'junegunn/vim-easy-align'
+
 " }}}
 
 " Ui {{{
@@ -82,9 +78,6 @@ filetype plugin indent on
 " }}}
 
 " Search {{{
-  " 外部のgrep利用。:Grepで対話形式でgrep :Rgrepは再帰
-  Bundle 'grep.vim'
-
   " NERDTree : ツリー型エクスプローラ
   Bundle 'The-NERD-tree'
 
@@ -98,4 +91,6 @@ filetype plugin indent on
 " Others {{{
     " エンコード判定
     Bundle 'banyan/recognize_charcode.vim'
+
+    Bundle 'Shougo/vimproc.vim'
 " }}}

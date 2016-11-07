@@ -47,8 +47,12 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 export PATH="${HOME}/.rbenv/bin:${HOME}/.rbenv/shims:${HOME}/bin:${PATH}"
 export PATH=$PATH:/usr/local/mysql/bin
+export PATH="$PATH:/Users/PMAC025S/.phpenv/bin"
 eval "$(rbenv init -)"
+export PATH="/opt/chefdk/bin:$PATH"
+export PATH="$PATH:/Users/PMAC025S/.composer/vendor/bin"
 
+#
 ########################################
 # 環境変数
 export LANG=ja_JP.UTF-8
@@ -181,8 +185,6 @@ alias pull="git pull"
 
 alias v="vim"
 
-alias ctags='/usr/local/Cellar/ctags/5.8/bin/ctags'
-
 alias diff="colordiff"
 
 # C で標準出力をクリップボードにコピーする
@@ -258,6 +260,11 @@ function compare {
     fi
 }
 
+function browse {
+    url=`g remote -v | head -n 1 | awk '{print $2;}' | sed -e s/\.git$//`
+    branch=`cb`
+    open "$url/tree/$branch"
+}
 
 function hateb {
     curl -s --data '<?xml version="1.0"?><methodCall><methodName>bookmark.getTotalCount</methodName><params><param><value><string>http://shoyan.hatenablog.com/</string></value></param></params></methodCall>' http://b.hatena.ne.jp/xmlrpc | sed -e 's@.*<int>\(.*\)</int>.*@\1@'
@@ -278,6 +285,14 @@ function todo {
  echo "Success. It's copied to the clipboard."
 }
 
+function replace {
+    find . -type f -name '*' | xargs perl -i -pe 's/$1/$2/g'
+}
+
+function lpa {
+  echo 'LAA0572683'
+}
+
 #重複履歴を無視, 空白から始めたコマンドを無視 
 export HISTCONTROL=ignoreboth
 
@@ -288,3 +303,72 @@ export HISTCONTROL=ignoreboth
 if [ -f ~/.zshrc.local ]; then
    source ~/.zshrc.local
 fi
+
+function peco-select-history() {
+    local tac
+    if which tac > /dev/null; then
+        tac="tac"
+    else
+        tac="tail -r"
+    fi
+    BUFFER=$(\history -n 1 | \
+        eval $tac | \
+        peco --query "$LBUFFER")
+    CURSOR=$#BUFFER
+    zle clear-screen
+}
+zle -N peco-select-history
+bindkey '^r' peco-select-history
+
+_peco_mdfind() {
+  open "$(mdfind -onlyin ~/ -name $@ | peco)"
+}
+alias s="_peco_mdfind"
+
+function peco-cd()
+{
+    local var
+    local dir
+    if [ ! -t 0 ]; then
+    var=$(cat -)
+    dir=$(echo -n $var | peco)
+    else
+        return 1
+    fi
+
+    if [ -d "$dir" ]; then
+        cd "$dir"
+    else
+        echo "'$dir' was not directory." >&2
+        return 1
+    fi
+}
+
+function peco-open()
+{
+    local var
+    local file
+    local command="vim"
+    if [ ! -t 0 ]; then
+        var=$(cat -)
+        file=$(echo -n $var | peco)
+    else
+        return 1
+    fi
+
+    if [ -n "$1" ]; then
+      command="$1"
+    fi
+
+    if [ -e "$file" ]; then
+        # eval "$command $file"
+        sh -c "vim $file < /dev/tty"
+    else
+        echo "Could not open '$file'." >&2
+        return 1
+    fi
+}
+# eval "$(chef shell-init zsh)"
+# eval "$(phpenv init -)"
+eval "$(pyenv init -)"
+[[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
