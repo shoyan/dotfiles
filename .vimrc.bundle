@@ -1,96 +1,70 @@
 "vunlde.vimで管理してるpluginを読み込む
 
-" vundle settings
 set nocompatible
 filetype off
-set rtp+=~/.vim/vundle.git
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-filetype plugin indent on
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
 
-" Completion {{{
-  " 補完してくれる
-  Bundle 'Shougo/neocomplete'
+" 補完してくれる
+Plugin 'Shougo/neocomplete'
 
-  " Htmlの補完
-  Bundle "mattn/emmet-vim"
+" コメントアウト
+Plugin 'tomtom/tcomment_vim'
 
-" }}}
+" テキストを文字で囲む
+Plugin 'tpope/vim-surround'
+
+" Railsを快適に開発できるようにする
+Plugin 'tpope/vim-rails'
+
+Plugin 'xolox/vim-misc'
+
+" Vim plugin that allows you to visually select increasingly larger regions
+" of text using the same key combination."
+Plugin 'terryma/vim-expand-region'
+
+" インデントを整えてくれるプラグイン
+Plugin 'junegunn/vim-easy-align'
+
+" 文字色をつける
+Plugin 'desert256.vim'
+" https://github.com/chriskempson/vim-tomorrow-theme
+Plugin 'chriskempson/vim-tomorrow-theme'
+
+Plugin 'altercation/vim-colors-solarized'
+
+" ステータスラインをカッコよくする
+Plugin 'Lokaltog/vim-powerline'
+
+" gitの目印をつける
+Plugin 'airblade/vim-gitgutter'
+
+" JavaScript
+Plugin 'JavaScript-syntax'
+
+" jsのインデント
+Plugin 'pangloss/vim-javascript'
+
+" syntax checking plugins exist for eruby, haml, html, javascript, php, python, ruby and sass.
+Plugin 'scrooloose/syntastic'
+
+" NERDTree : ツリー型エクスプローラ
+Plugin 'The-NERD-tree'
+
+" ファイルの検索
+Plugin 'kien/ctrlp.vim'
+
+" unite
+"Plugin "Shougo/unite.vim"
 
 
-" Edit {{{
-  " 編集中のファイルを簡単に実行できるプラグイン
-  Bundle 'thinca/vim-quickrun'
+" エンコード判定
+Plugin 'banyan/recognize_charcode.vim'
 
-  " コメントアウト
-  Bundle 'tomtom/tcomment_vim'
+Plugin 'Shougo/vimproc.vim'
 
-  " テキストを文字で囲む
-  Bundle 'tpope/vim-surround'
-
-  " Railsを快適に開発できるようにする
-  Bundle 'tpope/vim-rails'
-
-  " slimの色をつける
-  Bundle 'slim-template/vim-slim'
-
-  " coffee scriptの色づけ
-  Bundle 'kchmck/vim-coffee-script'
-
-  Bundle 'xolox/vim-misc'
-
-  " Vim plugin that allows you to visually select increasingly larger regions
-  " of text using the same key combination."
-  Bundle 'terryma/vim-expand-region'
-
-  " インデントを整えてくれるプラグイン
-  Bundle 'junegunn/vim-easy-align'
-
-" }}}
-
-" Ui {{{
-  " 文字色をつける
-  Bundle 'desert256.vim'
-  " https://github.com/chriskempson/vim-tomorrow-theme
-  Bundle 'chriskempson/vim-tomorrow-theme'
-
-  Bundle 'altercation/vim-colors-solarized'
-
-  " ステータスラインをカッコよくする
-  Bundle 'Lokaltog/vim-powerline'
-
-  " gitの目印をつける
-  Bundle 'airblade/vim-gitgutter'
-" }}}
-
-" Syntax {{{
-  " JavaScript
-  Bundle 'JavaScript-syntax'
-
-  " jsのインデント
-  Bundle 'pangloss/vim-javascript'
-
-  " jQuery
-  Bundle 'jQuery'
-
-  " syntax checking plugins exist for eruby, haml, html, javascript, php, python, ruby and sass.
-  Bundle 'scrooloose/syntastic'
-" }}}
-
-" Search {{{
-  " NERDTree : ツリー型エクスプローラ
-  Bundle 'The-NERD-tree'
-
-  " ファイルの検索
-  Bundle 'kien/ctrlp.vim'
-
-  Bundle "Shougo/unite.vim"
-
-" }}}
-
-" Others {{{
-    " エンコード判定
-    Bundle 'banyan/recognize_charcode.vim'
-
-    Bundle 'Shougo/vimproc.vim'
-" }}}
+call vundle#end()            " required
+filetype plugin indent on    " required
