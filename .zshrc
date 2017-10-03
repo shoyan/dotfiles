@@ -45,12 +45,7 @@ plugins=(git colorize colored-man history cp emoji-clock history-substring-searc
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH="${HOME}/.rbenv/bin:${HOME}/.rbenv/shims:${HOME}/bin:${PATH}"
-export PATH=$PATH:/usr/local/mysql/bin
-export PATH="$PATH:/Users/PMAC025S/.phpenv/bin"
-eval "$(rbenv init -)"
-export PATH="/opt/chefdk/bin:$PATH"
-export PATH="$PATH:/Users/PMAC025S/.composer/vendor/bin"
+export PATH="${HOME}/bin:${PATH}"
 
 #
 ########################################
@@ -62,8 +57,8 @@ export LANG=ja_JP.UTF-8
 autoload -Uz colors
 colors
 
-# emacs 風キーバインドにする
-bindkey -e
+# vim風キーバインドにする
+bindkey -v
 
 # ヒストリの設定
 HISTFILE=~/.zsh_history
@@ -200,39 +195,9 @@ elif which putclip >/dev/null 2>&1 ; then
     alias -g C='| putclip'
 fi
 
-
-
-########################################
-# OS 別の設定
-case ${OSTYPE} in
-    darwin*)
-        #Mac用の設定
-        export CLICOLOR=1
-        alias ls='ls -G -F'
-        ;;
-    linux*)
-        #Linux用の設定
-        alias ls='ls --color'
-        ;;
-esac
-
-# vim:set ft=zsh:
-
-function authme {
-  ssh $1 'cat >>.ssh/authorized_keys' < ~/.ssh/id_rsa.pub
-}
-
 # Gitのカレントブランチを取得
 function cb {
     echo "$(git rev-parse --abbrev-ref HEAD)"
-}
-
-# Git branch create.
-# ブランチを作成
-# bc branch_name
-function bc {
-    git fetch
-    git checkout -b $1 origin/$1
 }
 
 # カレントブランチをリモートにpush
@@ -242,55 +207,6 @@ function push {
 
 function branch_clean {
     g branch --merged | grep -v \* | grep -v master | xargs -I % git branch -d %
-}
-
-function seika {
-    local URL="$(git remote -v | head -n 1 | sed -e 's|.*git@\(.*\):\(.*\)\.git.*|https://\1/\2|g')"; git log --pretty="%s \n $URL/commit/%H" --author="$(git config --get user.name)" --since=1.days | sed 's/\\n/\
-/g'
-}
-
-function compare {
-    local CURRENT_BRANCH=$(cb);
-    local REMOTE_URI="$(git remote -v)";
-
-    if [[ "$REMOTE_URI" =~ "ghe" ]]; then
-        open "$(git remote -v | head -n 1 | sed -e 's|.*http://\(.*\).git.*|http://\1/|g')compare/master...$CURRENT_BRANCH"
-    else
-        open "$(git remote -v | head -n 1 | sed -e 's|.*git@\(.*\):\(.*\)\.git.*|https://\1/\2|g')/compare/master...$CURRENT_BRANCH"
-    fi
-}
-
-function browse {
-    url=`g remote -v | head -n 1 | awk '{print $2;}' | sed -e s/\.git$//`
-    branch=`cb`
-    open "$url/tree/$branch"
-}
-
-function hateb {
-    curl -s --data '<?xml version="1.0"?><methodCall><methodName>bookmark.getTotalCount</methodName><params><param><value><string>http://shoyan.hatenablog.com/</string></value></param></params></methodCall>' http://b.hatena.ne.jp/xmlrpc | sed -e 's@.*<int>\(.*\)</int>.*@\1@'
-}
-
-# 時刻表
-function jikoku {
-    open "http://subway.city.fukuoka.lg.jp/schedule/eki_diagram.php?p1=0&p2=%E8%B5%A4%E5%9D%82&p3=0&p4=0"
-}
-
-# ジブリのmusic
-function jiburi {
-    open "https://www.youtube.com/watch?v=xDAqQgWiAvE"
-}
-
-function todo {
- echo 'TODO\nスケジュール\n9:00 - 13:00\n13:00 - 14:00\n14:00 - 18:00\nメモ\n' | pbcopy
- echo "Success. It's copied to the clipboard."
-}
-
-function replace {
-    find . -type f -name '*' | xargs perl -i -pe 's/$1/$2/g'
-}
-
-function lpa {
-  echo 'LAA0572683'
 }
 
 #重複履歴を無視, 空白から始めたコマンドを無視 
@@ -368,7 +284,3 @@ function peco-open()
         return 1
     fi
 }
-# eval "$(chef shell-init zsh)"
-# eval "$(phpenv init -)"
-eval "$(pyenv init -)"
-[[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
