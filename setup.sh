@@ -10,7 +10,8 @@ done
 
 
 if [ ! -e ~/.vim/autoload/pathogen.vim ]; then
-    curl -Sso ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+    mkdir -p ~/.vim/autoload ~/.vim/bundle && \
+    curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 fi
 
 if [ ! -e ~/.vim/bundle/vimproc.vim ]; then
