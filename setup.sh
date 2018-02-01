@@ -19,3 +19,19 @@ if [ ! -e ~/.vim/bundle/vimproc.vim ]; then
     cd ~/.vim/bundle/vimproc.vim
     make
 fi
+
+if [ ! -x /usr/local/bin/brew ]; then
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
+if [ ! -x /usr/local/bin/tmux ]; then
+    brew install tmux
+fi
+
+if [ ! -x /usr/local/bin/peco ]; then
+    brew install peco
+fi
+
+brew install reattach-to-user-namespace
+
+vim +PluginInstall +qall
