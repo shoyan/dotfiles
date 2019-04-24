@@ -8,9 +8,6 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-" 補完してくれる
-Plugin 'Shougo/neocomplete'
-
 " コメントアウト
 Plugin 'tomtom/tcomment_vim'
 
@@ -57,14 +54,8 @@ Plugin 'The-NERD-tree'
 " ファイルの検索
 Plugin 'kien/ctrlp.vim'
 
-" unite
-"Plugin "Shougo/unite.vim"
-
-
 " エンコード判定
 Plugin 'banyan/recognize_charcode.vim'
-
-Plugin 'Shougo/vimproc.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required

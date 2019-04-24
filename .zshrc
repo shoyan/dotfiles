@@ -1,11 +1,13 @@
 # Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+#ZSH=$HOME/.oh-my-zsh
+export ZSH="/Users/shoyamas/.oh-my-zsh"
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="pygmalion"
+#ZSH_THEME="robbyrussell"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -42,12 +44,17 @@ ZSH_THEME="pygmalion"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git colorize colored-man history cp emoji-clock history-substring-search rails)
 
+
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH="${HOME}/bin:${PATH}"
+export GOPATH="${HOME}/.go"
+export PATH="${GOPATH}/bin:${HOME}/bin:${PATH}"
+export PATH=/Users/shoyamas/miniconda3/bin:$PATH
+#export PATH=/Users/shoyamas/graalvm/Contents/Home/bin:$PATH
+#export PATH=/Users/shoyamas/graalvm/Contents/Home/jre/languages/js/bin:$PATH
+export PATH=/usr/local/Cellar/ruby/2.5.1/bin/:$PATH
 
-#
 ########################################
 # 環境変数
 export LANG=ja_JP.UTF-8
@@ -58,7 +65,7 @@ autoload -Uz colors
 colors
 
 # vim風キーバインドにする
-bindkey -v
+#bindkey -v
 
 # ヒストリの設定
 HISTFILE=~/.zsh_history
@@ -180,7 +187,7 @@ alias pull="git pull"
 
 alias v="vim"
 
-alias diff="colordiff"
+#alias diff="colordiff"
 
 alias ku="kubectl"
 alias bp="bpctl"
@@ -287,7 +294,11 @@ function peco-open()
         return 1
     fi
 }
-eval "$(chef shell-init zsh)"
+
+# リポジトリに移動するコマンド
+alias repocd='cd `ghq list -p | peco`'
+# githubに移動するコマンド
+alias ghopen='open "https://$(ghq list | peco)"'
 
 man() {
     env LESS_TERMCAP_mb=$'\E[01;31m' \

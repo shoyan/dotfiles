@@ -1,8 +1,8 @@
 [user]
-  email = s-yamasaki@pepabo.com
+  email = shoyamas@yahoo-corp.jp
   name = Shohei Yamasaki
 [color]
-  ui = true
+	ui = true
 [alias]
   st  = status
   co = checkout
@@ -41,3 +41,5 @@
 	noprefix = false
 [credential]
 	helper = osxkeychain
+[ghq]
+	root = /Users/shoyamas/Workspace/
