@@ -15,3 +15,7 @@ fi
 if [ ! -x /usr/local/bin/peco ]; then
     brew install peco
 fi
+
+if [ ! -x /usr/local/bin/ghq]; then
+    brew install ghq
+fi
