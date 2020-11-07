@@ -1,7 +1,0 @@
-#!/bin/sh
-
-#
-# ctagsを更新する
-#
-echo "refresh_ctags!"
-.git/hooks/task/refresh_ctags > /dev/null &

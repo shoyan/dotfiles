@@ -42,8 +42,7 @@ ZSH_THEME="pygmalion"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git colorize colored-man history cp emoji-clock history-substring-search rails)
-
+plugins=(git colorize history cp emoji-clock history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
 

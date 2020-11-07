@@ -1,5 +1,5 @@
 [user]
-  email = shoyamas@yahoo-corp.jp
+  email = yamasaki0406@gmail.com
   name = Shohei Yamasaki
 [color]
 	ui = true
@@ -33,8 +33,7 @@
   autocrlf = input
   quotepath = false
   editor = /usr/bin/vim
-	excludesfile = /Users/shyamasaki/.gitignore_global
-#pager = lv -c
+	excludesfile = ~/.gitignore_global
 [push]
 	default = current
 [diff]
