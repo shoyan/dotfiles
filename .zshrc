@@ -1,6 +1,5 @@
 # Path to your oh-my-zsh configuration.
-#ZSH=$HOME/.oh-my-zsh
-export ZSH="/Users/shoyamas/.oh-my-zsh"
+ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -47,12 +46,7 @@ plugins=(git colorize history cp emoji-clock history-substring-search)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export GOPATH="${HOME}/.go"
-export PATH="${GOPATH}/bin:${HOME}/bin:${PATH}"
-export PATH=/Users/shoyamas/miniconda3/bin:$PATH
-#export PATH=/Users/shoyamas/graalvm/Contents/Home/bin:$PATH
-#export PATH=/Users/shoyamas/graalvm/Contents/Home/jre/languages/js/bin:$PATH
-export PATH=/usr/local/Cellar/ruby/2.5.1/bin/:$PATH
+export PATH="$HOME/.rbenv/shims:$PATH"
 
 ########################################
 # 環境変数
